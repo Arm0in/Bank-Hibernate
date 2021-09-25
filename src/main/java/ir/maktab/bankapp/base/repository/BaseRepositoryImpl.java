@@ -7,12 +7,12 @@ import javax.persistence.EntityManager;
 import java.io.Serializable;
 import java.util.List;
 
-public abstract class BaseEntityRepositoryImpl<E extends BaseEntity<ID>, ID extends Serializable>
-        implements BaseEntityRepository<E, ID> {
+public abstract class BaseRepositoryImpl<E extends BaseEntity<ID>, ID extends Serializable>
+        implements BaseRepository<E, ID> {
 
     protected final EntityManager entityManager;
 
-    public BaseEntityRepositoryImpl(EntityManager entityManager) {
+    public BaseRepositoryImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 

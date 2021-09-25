@@ -1,6 +1,5 @@
-package ir.maktab.bankapp.domain.employee;
+package ir.maktab.bankapp.domain;
 
-import ir.maktab.bankapp.domain.Branch;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -9,7 +9,7 @@ public class HibernateUtil {
 
 
     static {
-        mainEntityMangerFactory = Persistence.createEntityManagerFactory("default");
+        mainEntityMangerFactory = Persistence.createEntityManagerFactory("bankapp");
 
     }
 

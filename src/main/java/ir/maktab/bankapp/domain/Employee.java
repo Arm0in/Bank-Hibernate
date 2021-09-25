@@ -1,7 +1,7 @@
 package ir.maktab.bankapp.domain;
 
 import ir.maktab.bankapp.base.domain.BaseEntity;
-import ir.maktab.bankapp.domain.employee.Employee;
+import ir.maktab.bankapp.domain.enumaration.EmployeeType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,12 +11,15 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Table(name = Employee.TABLE_NAME)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User extends BaseEntity<Long> {
+public class Employee extends BaseEntity<Long> {
+
+    public static final String TABLE_NAME = "employee_table";
 
     @Column(name = "first_name")
     private String firstname;
@@ -41,4 +44,10 @@ public class User extends BaseEntity<Long> {
 
     @Column(name = "created_date")
     private LocalDate createdDate;
+
+    @Column(name = "employee_type")
+    @Enumerated(EnumType.STRING)
+    private EmployeeType employeeType;
+
+
 }

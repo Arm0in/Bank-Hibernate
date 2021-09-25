@@ -1,12 +1,13 @@
-package ir.maktab.bankapp.base.service;
+package ir.maktab.bankapp.base.repository;
 
 
 import ir.maktab.bankapp.base.domain.BaseEntity;
 
+import javax.persistence.EntityManager;
 import java.io.Serializable;
 import java.util.List;
 
-public interface BaseEntityService<E extends BaseEntity<ID>, ID extends Serializable> {
+public interface BaseRepository<E extends BaseEntity<ID>, ID extends Serializable> {
 
     E save(E e);
 
@@ -20,4 +21,5 @@ public interface BaseEntityService<E extends BaseEntity<ID>, ID extends Serializ
 
     Long countAll();
 
+    EntityManager getEntityManager();
 }

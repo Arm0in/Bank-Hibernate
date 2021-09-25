@@ -2,19 +2,19 @@ package ir.maktab.bankapp.base.service.impl;
 
 
 import ir.maktab.bankapp.base.domain.BaseEntity;
-import ir.maktab.bankapp.base.repository.BaseEntityRepository;
-import ir.maktab.bankapp.base.service.BaseEntityService;
+import ir.maktab.bankapp.base.repository.BaseRepository;
+import ir.maktab.bankapp.base.service.BaseService;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class BaseEntityServiceImpl<E extends BaseEntity<ID>,
-        ID extends Serializable, R extends BaseEntityRepository<E, ID>>
-        implements BaseEntityService<E, ID> {
+public class BaseServiceImpl<E extends BaseEntity<ID>,
+        ID extends Serializable, R extends BaseRepository<E, ID>>
+        implements BaseService<E, ID> {
 
     protected final R repository;
 
-    public BaseEntityServiceImpl(R repository) {
+    public BaseServiceImpl(R repository) {
         this.repository = repository;
     }
 

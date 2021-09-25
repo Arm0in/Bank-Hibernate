@@ -1,24 +1,36 @@
 package ir.maktab.bankapp.util;
 
 
-import ir.maktab.bankapp.domain.User;
+import ir.maktab.bankapp.domain.Branch;
+import ir.maktab.bankapp.domain.Client;
 
 public class SecurityContext {
 
-    private static User currentUser;
+    private static Client currentClient;
+
+    private static Branch currentBranch;
 
     private SecurityContext() {
     }
 
+    public static Branch getCurrentBranch() {
+        return currentBranch;
+    }
+
+    public static void setCurrentBranch(Branch currentBranch) {
+        SecurityContext.currentBranch = currentBranch;
+    }
+
     public static void logout() {
-        currentUser = null;
+        currentClient = null;
+        currentBranch = null;
     }
 
-    public static User getCurrentUser() {
-        return currentUser;
+    public static Client getCurrentClient() {
+        return currentClient;
     }
 
-    public static void setCurrentUser(User user) {
-        currentUser = user;
+    public static void setCurrentClient(Client user) {
+        currentClient = user;
     }
 }
